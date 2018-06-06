@@ -1,0 +1,17 @@
+
+{
+  "git.ignoreLimitWarning": true,
+  /* prettier 설정 */
+  "prettier.printWidth": 100,
+  "prettier.useTabs": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.tabWidth": 2,
+  "prettier.arrowParens": "always",
+  "prettier.eslintIntegration": true,
+  /* vscode 설정 */
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "eslint.enable": true
+}
