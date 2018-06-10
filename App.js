@@ -1,26 +1,26 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Icon from 'components/icon';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import { Font } from 'expo';
+import Root from 'routes/root';
 
 export default class App extends React.Component {
-  state = {};
+  state = {
+    fontLoaded: false,
+  };
+
+  async componentWillMount() {
+    await Font.loadAsync({
+      'Roboto-Light': require('assets/custom_font/Roboto-Light.ttf'),
+      'Roboto-Bold': require('assets/custom_font/Roboto-Bold.ttf'),
+      'Gugi-Regular': require('assets/custom_font/Gugi-Regular.ttf'),
+      icomoon: require('assets/fonts/icon_font/fonts/icomoon.ttf'),
+    });
+    this.setState({ fontLoaded: true });
+  }
+
   render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-        <Icon />
-      </View>
-    );
+    if (this.state.fontLoaded) {
+      return <Root />;
+    }
+    return null;
   }
 }
