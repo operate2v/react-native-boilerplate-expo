@@ -5,11 +5,12 @@ import Second from 'screens/second';
 
 const MainStack = createStackNavigator(
   {
-    Second,
     Main,
+    Second,
+    
   },
   {
-    initialRouteName: 'Second',
+    initialRouteName: 'Main',
     headerMode: 'none',
     headerVisible: false,
   },

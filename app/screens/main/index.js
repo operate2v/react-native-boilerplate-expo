@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, ScrollView, TouchableHighlight } from 'react-native';
+import { View, ScrollView, TouchableHighlight, Button } from 'react-native';
 import styled from 'styled-components/native';
 import { Text, ScreenView, Divider } from 'components/commons';
 import Header from 'components/header/header';
@@ -67,6 +67,7 @@ export default class Main extends Component {
             >
               <Text>Show Modal</Text>
             </TouchableHighlight>
+            <Button title="forms" onPress={() => this.props.navigation.navigate('Second')} />
           </ScrollWrapper>
         </ScrollView>
       </MainContainer>

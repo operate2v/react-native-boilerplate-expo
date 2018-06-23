@@ -10,7 +10,7 @@ export default class Loading extends Component {
   bootstrapAsync = async (navigation) => {
     const { navigate } = navigation;
     const userToken = await AsyncStorage.getItem('@AccessToken:key');
-    const navigateRoute = !userToken || userToken === 'null' ? routes.second : routes.main;
+    const navigateRoute = !userToken || userToken === 'null' ? routes.main : routes.second;
     navigate(navigateRoute);
   };
 
